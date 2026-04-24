@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Major Eletrônica</title>
+
+<link rel="manifest" href="manifest.json">
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>📺 Major Eletrônica</header>
+
+<div class="container">
+
+<div style="display:flex; gap:5px;">
+    <input id="busca" placeholder="Buscar cliente...">
+    <button onclick="filtrar()">Buscar</button>
+</div>
+
+
+
+<h3>Nova Ordem</h3>
+
+<input id="cliente" placeholder="Cliente">
+<input id="telefone" placeholder="Telefone">
+<input id="marca" placeholder="Marca">
+<input id="modelo" placeholder="Modelo">
+<input id="defeito" placeholder="Defeito">
+<input id="valor" placeholder="Valor">
+
+<button class="primary" onclick="salvar()">Salvar</button>
+<button class="blue" onclick="exportar()">Backup</button>
+
+<hr>
+
+<h3>Em andamento</h3>
+<div id="lista"></div>
+
+<h3>Histórico</h3>
+<div id="historico"></div>
+
+</div>
+
+<script src="app.js"></script>
+
+</body>
+</html>

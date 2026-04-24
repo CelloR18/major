@@ -1,0 +1,196 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* FUNDO */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #020617, #0f172a);
+    color: #e2e8f0;
+    min-height: 100vh;
+}
+
+/* HEADER */
+header {
+    padding: 20px;
+    text-align: center;
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    background: rgba(255,255,255,0.03);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+/* CONTAINER */
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+/* GRID */
+.grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+/* FORM CARD */
+.form {
+    background: rgba(255,255,255,0.04);
+    border-radius: 16px;
+    padding: 20px;
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255,255,255,0.05);
+}
+
+/* INPUTS */
+input {
+    width: 100%;
+    padding: 12px 14px;
+    margin: 6px 0;
+    border-radius: 10px;
+    border: 1px solid transparent;
+    background: rgba(255,255,255,0.05);
+    color: white;
+    font-size: 14px;
+    transition: 0.2s;
+}
+
+input:focus {
+    outline: none;
+    border: 1px solid #3b82f6;
+    background: rgba(255,255,255,0.08);
+}
+
+/* BOTÕES */
+button {
+    padding: 10px 14px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.2s;
+}
+
+button:hover {
+    transform: translateY(-1px);
+    opacity: 0.95;
+}
+
+.primary {
+    background: linear-gradient(90deg, #22c55e, #16a34a);
+    color: white;
+    width: 100%;
+}
+
+.blue {
+    background: linear-gradient(90deg, #3b82f6, #2563eb);
+    color: white;
+}
+
+/* BUSCA */
+.search-box {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+.search-box input {
+    flex: 1;
+}
+
+/* SEÇÕES */
+.section {
+    margin-top: 20px;
+}
+
+/* CARDS */
+.card {
+    background: rgba(255,255,255,0.04);
+    border-radius: 16px;
+    padding: 16px;
+    margin-bottom: 12px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.05);
+    transition: 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+}
+
+/* TOPO DO CARD */
+.top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+/* INFO */
+.info {
+    margin-top: 6px;
+    color: #94a3b8;
+    font-size: 13px;
+}
+
+/* STATUS BADGE */
+.top span {
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    background: rgba(255,255,255,0.08);
+}
+
+/* AÇÕES */
+.actions {
+    margin-top: 12px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+/* BOTÕES STATUS */
+.actions button {
+    font-size: 12px;
+    padding: 6px 10px;
+}
+
+/* DESKTOP */
+@media (min-width: 768px) {
+
+    .grid {
+        grid-template-columns: 350px 1fr;
+    }
+
+    .primary {
+        width: auto;
+    }
+
+    .card {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .card-content {
+        flex: 1;
+    }
+
+    .actions {
+        justify-content: flex-end;
+    }
+}
+
+/* TELAS GRANDES */
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1300px;
+    }
+}
