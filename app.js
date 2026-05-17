@@ -414,3 +414,55 @@ if('serviceWorker' in navigator){
 }
 
 atualizar()
+// LOGIN
+
+const USUARIO = "admin"
+const SENHA = "1234"
+
+function fazerLogin(){
+
+    let user =
+    document.getElementById("loginUser").value
+
+    let pass =
+    document.getElementById("loginPass").value
+
+    let erro =
+    document.getElementById("loginErro")
+
+    if(user === USUARIO && pass === SENHA){
+
+        localStorage.setItem("logado", "sim")
+
+        document.body.classList.add("logado")
+
+    }else{
+
+        erro.innerText =
+        "Usuário ou senha inválidos"
+
+    }
+
+}
+
+function verificarLogin(){
+
+    let logado =
+    localStorage.getItem("logado")
+
+    if(logado === "sim"){
+
+        document.body.classList.add("logado")
+
+    }
+
+}
+
+verificarLogin()
+function logout(){
+
+    localStorage.removeItem("logado")
+
+    location.reload()
+
+}
