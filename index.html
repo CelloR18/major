@@ -1,42 +1,35 @@
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Major Eletrônica</title>
 
 <link rel="manifest" href="manifest.json">
 <link rel="stylesheet" href="style.css">
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
 <header>
-
     <div class="header-content">
-
         <div>
             <h1>📺 Major Eletrônica</h1>
-            <p>Controle profissional de ordens de serviço</p>
+            <p>Controle inteligente de ordens de serviço</p>
         </div>
-
     </div>
-
 </header>
 
 <div class="container">
 
     <section class="stats">
-
         <div class="stat-card">
             <h2 id="totalOrdens">0</h2>
-            <span>Total de ordens</span>
+            <span>Ordens</span>
         </div>
 
         <div class="stat-card">
@@ -46,9 +39,8 @@
 
         <div class="stat-card">
             <h2 id="totalFinalizados">0</h2>
-            <span>Finalizadas</span>
+            <span>Finalizados</span>
         </div>
-
     </section>
 
     <div class="grid">
@@ -57,31 +49,21 @@
 
             <div class="section-title">
                 <h3>➕ Nova Ordem</h3>
-                <p>Cadastre um novo atendimento</p>
+                <p>Cadastre rapidamente um novo atendimento</p>
             </div>
 
             <input id="cliente" placeholder="Nome do cliente">
-
             <input id="telefone" placeholder="Telefone">
-
             <input id="cpf" placeholder="CPF do cliente">
-
-            <input id="marca" placeholder="Marca">
-
+            <input id="marca" placeholder="Marca do aparelho">
             <input id="modelo" placeholder="Modelo">
-
-            <input id="defeito" placeholder="Defeito">
-
-            <input id="valor" placeholder="Valor">
+            <input id="defeito" placeholder="Defeito informado">
+            <input id="valor" placeholder="Valor do serviço">
+            
 
             <div class="buttons">
-                <button class="primary" onclick="salvar()">
-                    Salvar Ordem
-                </button>
-
-                <button class="blue" onclick="exportar()">
-                    Backup
-                </button>
+                <button class="primary" onclick="salvar()">Salvar Ordem</button>
+                <button class="blue" onclick="exportar()">Fazer Backup</button>
             </div>
 
         </section>
@@ -89,36 +71,24 @@
         <section>
 
             <div class="search-box">
-
-                <input
-                    id="busca"
-                    placeholder="Buscar cliente, CPF, telefone ou modelo..."
-                >
-
-                <button class="dark" onclick="filtrar()">
-                    Buscar
-                </button>
-
+                <input id="busca" placeholder="Buscar cliente, telefone ou modelo...">
+                <button onclick="filtrar()">Buscar</button>
             </div>
 
             <div class="section">
-
                 <div class="section-title-inline">
                     <h3>🛠 Em andamento</h3>
                 </div>
 
                 <div id="lista"></div>
-
             </div>
 
             <div class="section">
-
                 <div class="section-title-inline">
                     <h3>✅ Histórico</h3>
                 </div>
 
                 <div id="historico"></div>
-
             </div>
 
         </section>
@@ -131,3 +101,9 @@
 
 </body>
 </html>
+
+
+
+
+
+
