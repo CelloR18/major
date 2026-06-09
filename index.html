@@ -1,20 +1,30 @@
-
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Major Eletrônica</title>
 
 <link rel="manifest" href="manifest.json">
+
 <link rel="stylesheet" href="style.css">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
+
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
-    <div id="loginScreen" class="login-screen">
+
+<!-- LOGIN -->
+
+<div id="loginScreen" class="login-screen">
 
     <div class="login-card">
 
@@ -34,92 +44,271 @@
             placeholder="Senha"
         >
 
-        <button class="primary" onclick="fazerLogin()">
+        <button
+            class="primary"
+            onclick="fazerLogin()"
+        >
             Entrar
         </button>
 
-        <div id="loginErro" class="login-erro"></div>
+        <div
+            id="loginErro"
+            class="login-erro">
+        </div>
 
     </div>
 
 </div>
 
+<!-- HEADER -->
+
 <header>
+
     <div class="header-content">
+
         <div>
+
             <h1>📺 Major Eletrônica</h1>
-            <p>Controle inteligente de ordens de serviço</p>
+
+            <p>
+                Controle profissional de assistência técnica
+            </p>
+
         </div>
+
+        <button
+            onclick="logout()"
+            class="dark"
+        >
+            Sair
+        </button>
+
     </div>
-    <button onclick="logout()" class="dark">
-Sair
-</button>
+
 </header>
+
+<!-- CONTAINER -->
 
 <div class="container">
 
+    <!-- DASHBOARD -->
+
     <section class="stats">
+
         <div class="stat-card">
+
             <h2 id="totalOrdens">0</h2>
-            <span>Ordens</span>
+
+            <span>Total de OS</span>
+
         </div>
 
         <div class="stat-card">
-            <h2 id="totalAndamento">0</h2>
-            <span>Em andamento</span>
+
+            <h2 id="totalOrcamentos">0</h2>
+
+            <span>Orçamentos</span>
+
         </div>
 
         <div class="stat-card">
-            <h2 id="totalFinalizados">0</h2>
-            <span>Finalizados</span>
+
+            <h2 id="totalReparos">0</h2>
+
+            <span>Em Reparo</span>
+
         </div>
+
+        <div class="stat-card">
+
+            <h2 id="totalProntos">0</h2>
+
+            <span>Prontos</span>
+
+        </div>
+
+        <div class="stat-card">
+
+            <h2 id="totalEntregues">0</h2>
+
+            <span>Entregues</span>
+
+        </div>
+
     </section>
 
     <div class="grid">
 
+        <!-- FORMULÁRIO -->
+
         <section class="form-card">
 
             <div class="section-title">
-                <h3>➕ Nova Ordem</h3>
-                <p>Cadastre rapidamente um novo atendimento</p>
+
+                <h3>➕ Nova Ordem de Serviço</h3>
+
+                <p>
+                    Cadastre um novo equipamento
+                </p>
+
             </div>
 
-            <input id="cliente" placeholder="Nome do cliente">
-            <input id="telefone" placeholder="Telefone">
-            <input id="cpf" placeholder="CPF do cliente">
-            <input id="marca" placeholder="Marca do aparelho">
-            <input id="modelo" placeholder="Polegada">
-            <input id="defeito" placeholder="Defeito informado">
-            <input id="valor" placeholder="Valor do serviço">
-            
+            <select id="tipoEntrada">
+
+                <option value="orcamento">
+                    📋 Entrada para Orçamento
+                </option>
+
+                <option value="reparo">
+                    🛠 Entrada Direta para Reparo
+                </option>
+
+            </select>
+
+            <input
+                id="cliente"
+                placeholder="Nome do cliente"
+            >
+
+            <input
+                id="telefone"
+                placeholder="Telefone"
+            >
+
+            <input
+                id="cpf"
+                placeholder="CPF"
+            >
+
+            <input
+                id="email"
+                placeholder="E-mail (opcional)"
+            >
+
+            <input
+                id="marca"
+                placeholder="Marca da TV"
+            >
+
+            <input
+                id="modelo"
+                placeholder="Modelo / Polegadas"
+            >
+
+            <input
+                id="defeito"
+                placeholder="Defeito informado"
+            >
+
+            <textarea
+                id="observacoes"
+                rows="4"
+                placeholder="Observações internas"
+            ></textarea>
 
             <div class="buttons">
-                <button class="primary" onclick="salvar()">Salvar Ordem</button>
+
+                <button
+                    class="primary"
+                    onclick="salvar()"
+                >
+                    Salvar Ordem
+                </button>
+
             </div>
 
         </section>
 
+        <!-- CONTEÚDO -->
+
         <section>
 
+            <!-- BUSCA -->
+
             <div class="search-box">
-                <input id="busca" placeholder="Buscar cliente, telefone ou modelo...">
-                <button onclick="filtrar()">Buscar</button>
+
+                <input
+                    id="busca"
+                    placeholder="Buscar por OS, cliente, telefone, CPF ou modelo"
+                >
+
+                <button
+                    class="blue"
+                    onclick="filtrar()"
+                >
+                    Buscar
+                </button>
+
             </div>
 
+            <!-- ORÇAMENTOS -->
+
             <div class="section">
+
                 <div class="section-title-inline">
-                    <h3>🛠 Em andamento</h3>
+
+                    <h3>📋 Orçamentos</h3>
+
                 </div>
 
-                <div id="lista"></div>
+                <div id="orcamentos"></div>
+
             </div>
 
+            <!-- REPAROS -->
+
             <div class="section">
+
                 <div class="section-title-inline">
-                    <h3>✅ Histórico</h3>
+
+                    <h3>🛠 Em Reparo</h3>
+
+                </div>
+
+                <div id="reparos"></div>
+
+            </div>
+
+            <!-- PRONTOS -->
+
+            <div class="section">
+
+                <div class="section-title-inline">
+
+                    <h3>✅ Prontos para Retirada</h3>
+
+                </div>
+
+                <div id="prontos"></div>
+
+            </div>
+
+            <!-- ENTREGUES -->
+
+            <div class="section">
+
+                <div class="section-title-inline">
+
+                    <h3>📦 Entregues</h3>
+
+                </div>
+
+                <div id="entregues"></div>
+
+            </div>
+
+            <!-- HISTÓRICO -->
+
+            <div class="section">
+
+                <div class="section-title-inline">
+
+                    <h3>📚 Histórico Geral</h3>
+
                 </div>
 
                 <div id="historico"></div>
+
             </div>
 
         </section>
@@ -131,10 +320,5 @@ Sair
 <script src="app.js"></script>
 
 </body>
+
 </html>
-
-
-
-
-
-
