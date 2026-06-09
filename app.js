@@ -253,8 +253,8 @@ function salvar(){
 
         entrega: "",
 
-        garantia: ""
-
+        garantia: "",
+        arquivado: false,
     }
 
     ordens.push(ordem)
@@ -556,13 +556,28 @@ function render(lista){
 
         </button>
 
-        <button
-        class="danger"
-        onclick="excluir(${o.id})">
+        ${
+    o.status === "Entregue"
+    ?
 
-        Excluir
+    `<button
+    class="danger"
+    onclick="arquivar(${o.id})">
 
-        </button>
+    Arquivar
+
+    </button>`
+
+    :
+
+    `<button
+    class="danger"
+    onclick="excluir(${o.id})">
+
+    Excluir
+
+    </button>`
+}
 
         `
 
@@ -653,13 +668,19 @@ function render(lista){
 
         }
 
-        if(o.status === "Entregue"){
+        if(
+    o.status === "Entregue" &&
+    !o.arquivado
+){
 
-            htmlEntregues += card
+    htmlEntregues += card
 
-        }
+}
+        
 
-        htmlHistorico += card
+        let cardHistorico = card
+
+htmlHistorico += cardHistorico
 
     })
 
@@ -1034,7 +1055,7 @@ function pdf(id){
         <div class="header">
 
             <h1>
-            MAJOR ELETRÔNICA
+            ELETRÔNICA MAJOR
             </h1>
 
             <p>
@@ -1215,7 +1236,7 @@ function pdf(id){
 
                 Cobertura referente ao
                 serviço executado
-                pela Major Eletrônica.
+                pela Eletrônica Major.
 
                 </div>
 
@@ -1308,5 +1329,33 @@ verificarLogin()
 atualizar()
 
 console.log(
-"Major Eletrônica carregado com sucesso."
+"Eletrônica Major carregado com sucesso."
 )
+function arquivar(id){
+
+    let ordem =
+    ordens.find(x => x.id === id)
+
+    if(!ordem) return
+
+    ordem.arquivado = true
+
+    atualizar()
+
+}
+let historicoVisivel = true
+
+function toggleHistorico(){
+
+    historicoVisivel =
+    !historicoVisivel
+
+    document.getElementById(
+        "historico"
+    ).style.display =
+
+    historicoVisivel
+    ? "block"
+    : "none"
+
+}
