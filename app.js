@@ -1058,7 +1058,7 @@ function pdf(id){
             ELETRÔNICA MAJOR
             
             </h1>
-
+            <br/>
             <p>
             TEL: (21) 98070-3495
             CNPJ: 45.601.712/0001-02
