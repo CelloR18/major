@@ -1234,9 +1234,7 @@ function pdf(id){
 
                 <br><br>
 
-                Cobertura referente ao
-                serviço executado
-                pela Eletrônica Major.
+                ATENÇÃO: De acordo com a Cláusula e de Artigo do Direito e Códigos Penais, Garantia de 90 Dias. Artigo 1275 e 1278, nos Serviços Executados e também objetos não procurados no Prazo de 90 dias serão vendidos para a reposição de peças mais mão de Obra Dentro dos Direitos. CNPJ: 45.601.712//0001-02.
 
                 </div>
 
