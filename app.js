@@ -181,6 +181,7 @@ function salvar(){
         ).value,
 
         cliente:
+        
 
         cliente,
 
@@ -219,6 +220,11 @@ function salvar(){
         document.getElementById(
             "defeito"
         ).value,
+
+    
+
+        tecnico:
+document.getElementById("tecnico").value,
 
         observacoes:
 
@@ -276,7 +282,9 @@ function salvar(){
 // =====================================
 
 function limparCampos(){
-
+    document.getElementById(
+        "tecnico"
+    ).value = ""
     document.getElementById(
         "cliente"
     ).value = ""
@@ -583,70 +591,80 @@ function render(lista){
 
         let card = `
 
-        <div class="card">
+<div class="card">
 
-            <div class="os">
+    <div class="os">
 
-                OS #${o.numeroOS}
+        OS #${o.numeroOS}
 
-            </div>
+    </div>
 
-            <div class="top">
+    <div class="top">
 
-                <b>${o.cliente}</b>
+        <b>${o.cliente}</b>
 
-                <span
-                class="status ${statusClass}">
+        <span class="status ${statusClass}">
 
-                ${o.status}
+            ${o.status}
 
-                </span>
+        </span>
 
-            </div>
+    </div>
 
-            <div class="info">
+    <div class="info">
 
-                📞 ${o.telefone || "-"}
+        ${
+            o.status === "Orçamento" ||
+            o.status === "Pronto" ||
+            o.status === "Entregue"
+            ?
+            `
+            👨‍🔧 <strong>Recebido Por:</strong> ${o.tecnico || o.Técnico || "-"}
+            <br>
+            `
+            :
+            ""
+        }
 
-                <br>
+        📞 ${o.telefone || "-"}
 
-                🪪 ${o.cpf || "-"}
+        <br>
 
-                <br>
+        🪪 ${o.cpf || "-"}
 
-                📺 ${o.marca || "-"} -
-                ${o.modelo || "-"}
+        <br>
 
-                <br>
+        📺 ${o.marca || "-"} - ${o.modelo || "-"}
 
-                🛠 ${o.defeito || "-"}
+        <br>
 
-                <br>
+        🛠 ${o.defeito || "-"}
 
-                💰 ${
-                    o.valor
-                    ?
-                    "R$ " + o.valor
-                    :
-                    "Não informado"
-                }
+        <br>
 
-                <br>
+        💰 ${
+            o.valor
+            ?
+            "R$ " + o.valor
+            :
+            "Não informado"
+        }
 
-                📅 Entrada:
-                ${o.entrada}
+        <br>
 
-            </div>
+        📅 Entrada: ${o.entrada}
 
-            <div class="actions">
+    </div>
 
-                ${botoes}
+    <div class="actions">
 
-            </div>
+        ${botoes}
 
-        </div>
+    </div>
 
-        `
+</div>
+
+`
 
         // ORGANIZAÇÃO
 
