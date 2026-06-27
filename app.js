@@ -1056,12 +1056,12 @@ function pdf(id){
 
             <h1>
             ELETRÔNICA MAJOR
-            TEL: (21) 98070-3495
-            CNPJ: 45.601.712/0001-02
+            
             </h1>
 
             <p>
-            Ordem de Serviço Digital
+            TEL: (21) 98070-3495
+            CNPJ: 45.601.712/0001-02
             </p>
 
         </div>
