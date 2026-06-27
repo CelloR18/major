@@ -6,7 +6,7 @@
 // LOGIN
 
 const USUARIO = "admin"
-const SENHA = "1234"
+const SENHA = "27073013"
 
 // BANCO LOCAL
 
